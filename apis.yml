@@ -1,0 +1,26 @@
+name: Cincinnati Financial
+description: >-
+  Cincinnati Financial Corporation is a property casualty insurer that markets
+  through independent insurance agents. The company provides business, home, and
+  auto insurance along with life insurance and investments through its
+  subsidiaries.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://github.com/api-evangelist/cincinnati-financial/blob/main/apis.yml
+created: '2025-03-01'
+modified: '2025-03-01'
+specificationVersion: '0.18'
+tags:
+  - Insurance
+  - Property Casualty
+  - Financial Services
+  - Life Insurance
+apis: []
+common:
+  - type: Website
+    url: https://www.cinfin.com/
+  - type: About
+    url: https://www.cinfin.com/about-us
+maintainers:
+  - FN: API Evangelist
+    url: https://apievangelist.com
+    email: info@apievangelist.com
