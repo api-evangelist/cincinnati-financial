@@ -10,6 +10,17 @@ description: >-
   through web portals (cinfin.com, onlineservice.cinfin.com, and the Cincinnati
   Insurance Mobile App), with technical integrations for appointed agencies
   handled directly by Cincinnati Insurance IT support.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
