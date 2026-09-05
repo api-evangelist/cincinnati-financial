@@ -1,0 +1,39 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://edge.sitecorecloud.io/cincinna-x33xq9h6/media/Project/Cincinnati-Financial/CinFin/Files/api-terms-conditions.pdf
+  (Cincinnati Insurance "API Terms and Conditions Agreement", section 6 "Payment"),
+  linked from https://www.cinfin.com/legal/api-terms-conditions-acceptance
+plan_count: 0
+currency: USD
+note: >-
+  Cincinnati Insurance publishes no plans, tiers or price list for its APIs, and there is
+  nothing to omit: the API Terms and Conditions Agreement states the position outright in
+  section 6 — "Cincinnati Insurance does not currently charge a fee for accessing or using
+  our APIs; however, Cincinnati Insurance may do so in the future." Access is therefore
+  zero-cost but not self-serve. It is granted under a signed-by-acceptance licence that a
+  named individual at a named organization executes through the acceptance form, after which
+  Cincinnati contacts the applicant ("Your submission has been received. We'll be in contact
+  with you shortly."). There is no published quota, no overage schedule and no metering
+  language anywhere in the agreement. plan_count is 0 as a published fact, not as a gap in
+  our search.
+plans: []
+pricing_posture:
+  model: no-fee-at-present
+  self_serve: false
+  fee_reserved: true
+  fee_reservation_quote: >-
+    Cincinnati Insurance does not currently charge a fee for accessing or using our APIs;
+    however, Cincinnati Insurance may do so in the future.
+  onboarding: >-
+    Accept the API Terms and Conditions Agreement at
+    https://www.cinfin.com/legal/api-terms-conditions-acceptance (full name, email, title,
+    organization, reCAPTCHA), then wait to be contacted.
+evidence:
+  - url: https://www.cinfin.com/legal/api-terms-conditions-acceptance
+    status: 200
+    kind: API access acceptance form (live probe)
+  - url: >-
+      https://edge.sitecorecloud.io/cincinna-x33xq9h6/media/Project/Cincinnati-Financial/CinFin/Files/api-terms-conditions.pdf
+    status: 200
+    kind: API Terms and Conditions Agreement, PDF, 203413 bytes (live probe)

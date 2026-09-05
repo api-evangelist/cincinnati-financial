@@ -1,0 +1,86 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://www.cinfin.com/legal/api-terms-conditions-acceptance and the API Terms and
+  Conditions Agreement it links
+  (https://edge.sitecorecloud.io/cincinna-x33xq9h6/media/Project/Cincinnati-Financial/CinFin/Files/api-terms-conditions.pdf),
+  plus live probes of https://www.cinfin.com/.well-known/security.txt and the cinfin.com sitemap.
+note: >-
+  Every entry below is a NEGATIVE or a qualified finding, and that is the measurement. Cincinnati
+  Insurance runs a real API program under a published licence, but the contract that governs it is
+  a legal document, not a technical one: it names no protocol, no auth scheme, no media type and no
+  domain standard. A full-text census of the API Terms and Conditions Agreement returns zero
+  occurrences of ACORD, IVANS, AL3, CSIO, CIECA, NGDS, OpenAPI, Swagger, OAuth, SOAP, JSON or XML.
+  The only standard it names anywhere is PCI DSS, and it names it as an obligation it pushes onto
+  the integrator rather than as a certification Cincinnati holds. The per-API technical terms live
+  in the "API Policy(ies)" the agreement incorporates by reference nine times and never publishes.
+domain_standard:
+  market: Property & casualty insurance (US, independent-agency distribution)
+  regime: insurance
+  candidates_probed:
+    - acord
+    - acord-al3
+    - acord-xml
+    - ngds
+    - grlc
+    - cieca-bms
+    - csio
+    - market-reform-contract
+  declared: false
+  note: >-
+    REWARD-ONLY dimension, and Cincinnati declares nothing. The insurance regime's standards
+    shortlist (ACORD/AL3/XML, NGDS, GRLC, CIECA BMS, CSIO, Market Reform Contract) was checked
+    against the only machine-fetchable contract document Cincinnati publishes and against the
+    231-URL sitemap; none is named. This is recorded as an absence of a DECLARATION, not as
+    evidence that no ACORD exchange happens — a P&C carrier distributing exclusively through
+    independent agencies almost certainly moves ACORD traffic to agency management systems, but
+    that exchange is invisible from outside the CinciLink partner wall and this pipeline does not
+    assert what it cannot fetch.
+conformance:
+  - id: pci-dss
+    conforms: false
+    qualifier: obligation-on-integrator
+    evidence: >-
+      API Terms and Conditions Agreement, section 7 closing paragraph: "If, through your use of
+      Cincinnati Insurance's APIs, you have access to or will collect, transmit, access, use,
+      store, process, dispose of or disclose credit, debit or other payment cardholder
+      information, you shall at all times remain in compliance with the Payment Card Industry
+      Data Security Standard ("PCI DSS") requirements". The clause binds the Provider, not
+      Cincinnati; Cincinnati publishes no PCI attestation of its own. It does establish that at
+      least one Cincinnati API can carry cardholder data.
+    source: >-
+      https://edge.sitecorecloud.io/cincinna-x33xq9h6/media/Project/Cincinnati-Financial/CinFin/Files/api-terms-conditions.pdf
+  - id: rfc9116-security-txt
+    conforms: false
+    qualifier: served-but-incomplete
+    evidence: >-
+      https://www.cinfin.com/.well-known/security.txt returns HTTP 200 with a single line,
+      "Contact: mailto:bugbounty@cinfin.com" (36 bytes). RFC 9116 requires an Expires field;
+      Canonical, Encryption, Policy and Preferred-Languages are all absent. The file is real and
+      the disclosure route it names is real, but it does not meet the RFC it implements. Note the
+      site's robots.txt also carries "Disallow: /.well-known/".
+    source: https://www.cinfin.com/.well-known/security.txt
+  - id: oauth2
+    conforms: false
+    evidence: >-
+      No /.well-known/oauth-authorization-server or /.well-known/openid-configuration on any
+      cinfin.com host (404 on cinfin.com and www.cinfin.com, 302-to-login on cincilink.cinfin.com,
+      HTML shell on onlineservice.cinfin.com). The agent B2B front door, cincilink.cinfin.com, is
+      IBM Security Verify Access / WebSEAL form-based session auth (TAM_OP, PD-S-SESSION-ID
+      cookie, HPDBA0521I), not an OAuth authorization server. The API agreement names no token
+      scheme.
+    source: https://cincilink.cinfin.com/
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: No error catalog, problem-type registry or error reference is published.
+    source: https://www.cinfin.com/legal/api-terms-conditions-acceptance
+  - id: openapi
+    conforms: false
+    evidence: >-
+      No OpenAPI, Swagger, GraphQL SDL, AsyncAPI, WSDL or .proto is reachable anonymously. Probed
+      /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /swagger/v1/swagger.json,
+      /api-docs, /docs, /redoc, /graphql and ?wsdl against www.cinfin.com, api.cinfin.com,
+      portal.cinfin.com, cincilink.cinfin.com and onlineservice.cinfin.com. api.cinfin.com resolves
+      to an F5 Distributed Cloud edge that resets TLS and answers "Not Found" with no published
+      route; every other host returns the marketing 404, a login 302, or an SPA shell.
+    source: https://api.cinfin.com/

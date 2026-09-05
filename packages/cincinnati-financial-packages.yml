@@ -1,0 +1,44 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Unauthenticated registry metadata probes (registry.npmjs.org, pypi.org/pypi/<pkg>/json) plus
+  api.github.com/orgs lookups, cross-checked against the 231-URL cinfin.com sitemap and the
+  Cincinnati Insurance API Terms and Conditions Agreement.
+package_count: 0
+packages: []
+note: >-
+  Cincinnati Insurance publishes no client library on any registry, and has no GitHub
+  organization to publish one from. Probed and 404: npm cinfin / cincinnati-financial /
+  cincinnati-insurance, PyPI cinfin / cincinnati-financial / cincinnati-insurance, and GitHub
+  orgs cinfin, cincinnati-financial, CincinnatiInsurance. Nothing in the sitemap points at a
+  package, CDN bundle or SDK download, and the API agreement — the only public document about
+  the API program — mentions no SDK. No `version:`/`published:` fields are recorded because
+  there is no package to read them from; this is a checked absence, not an unchecked field.
+probes:
+  - registry: npm
+    name: cinfin
+    status: 404
+  - registry: npm
+    name: cincinnati-financial
+    status: 404
+  - registry: npm
+    name: cincinnati-insurance
+    status: 404
+  - registry: pypi
+    name: cinfin
+    status: 404
+  - registry: pypi
+    name: cincinnati-financial
+    status: 404
+  - registry: pypi
+    name: cincinnati-insurance
+    status: 404
+  - registry: github-org
+    name: cinfin
+    status: 404
+  - registry: github-org
+    name: cincinnati-financial
+    status: 404
+  - registry: github-org
+    name: CincinnatiInsurance
+    status: 404

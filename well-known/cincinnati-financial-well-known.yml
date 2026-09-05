@@ -1,0 +1,127 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Live anonymous GET of the named /.well-known/ paths on every host this record
+  knows: the registrable domain and www, the policyholder portal, the investor
+  site, the agent B2B portal (CinciLink) and the corporate API edge host.
+note: >-
+  Cincinnati Financial serves exactly one well-known document: an RFC 9116
+  security.txt on cinfin.com and www.cinfin.com carrying a single Contact line
+  (mailto:bugbounty@cinfin.com). No expires, encryption, policy or preferred-languages
+  field is published, so the file is below RFC 9116 minimums even though it is real.
+  Every other named path 404s on the Sitecore-served marketing site. onlineservice.cinfin.com
+  answers HTTP 200 with a ~23KB HTML login shell for EVERY /.well-known/ path probed —
+  a catch-all, not a document — and is recorded as a miss on content, not on status.
+  cincilink.cinfin.com (IBM Security Verify Access / WebSEAL B2B auth) 302s every path
+  to its login. Note also that https://www.cinfin.com/robots.txt carries
+  "Disallow: /.well-known/" while the origin serves security.txt at 200 — the file is
+  published but the site asks crawlers not to read it.
+hosts:
+  - host: cinfin.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: well-known/cincinnati-financial-security.txt
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: www.cinfin.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: well-known/cincinnati-financial-security.txt
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: onlineservice.cinfin.com
+    note: >-
+      SPA/login catch-all — every path returns 200 with the same ~23KB HTML shell.
+      Recorded as a miss: a 200 that returns HTML is not a document.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        content_type: text/html
+        result: html-shell-not-a-document
+      - path: /.well-known/openid-configuration
+        status: 200
+        content_type: text/html
+        result: html-shell-not-a-document
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: text/html
+        result: html-shell-not-a-document
+      - path: /.well-known/api-catalog
+        status: 200
+        content_type: text/html
+        result: html-shell-not-a-document
+      - path: /.well-known/agent-card.json
+        status: 200
+        content_type: text/html
+        result: html-shell-not-a-document
+      - path: /.well-known/agent.json
+        status: 200
+        content_type: text/html
+        result: html-shell-not-a-document
+  - host: cincilink.cinfin.com
+    note: >-
+      IBM Security Verify Access (WebSEAL) B2B authentication front door for the
+      independent-agency portal. Every path 302s to /B2BAuth/authresponse.
+    documents:
+      - path: /.well-known/openid-configuration
+        status: 302
+      - path: /.well-known/oauth-authorization-server
+        status: 302
+      - path: /.well-known/oauth-protected-resource
+        status: 302
+      - path: /.well-known/security.txt
+        status: 302
+      - path: /.well-known/api-catalog
+        status: 302
+      - path: /.well-known/agent-card.json
+        status: 302
+      - path: /.well-known/agent.json
+        status: 302
+  - host: investors.cinfin.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: api.cinfin.com
+    note: >-
+      DNS resolves to an F5 Distributed Cloud edge (ves.io) but the TLS session is
+      reset before a response completes; the edge answers "Not Found - Request ID: ..."
+      with no route published. No anonymous surface.
+    documents:
+      - path: /.well-known/agent-card.json
+        status: 0
+        result: tls-reset-no-route
+      - path: /.well-known/oauth-protected-resource
+        status: 0
+        result: tls-reset-no-route

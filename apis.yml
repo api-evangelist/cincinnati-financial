@@ -1,15 +1,18 @@
 aid: cincinnati-financial
 name: Cincinnati Financial
 description: >-
-  Cincinnati Financial Corporation (NASDAQ: CINF) is a property and casualty
-  insurer headquartered in Fairfield, Ohio, that markets a full suite of
-  business, home, auto, and life insurance products plus investment services
-  exclusively through a network of independent insurance agencies. Cincinnati
-  Financial does not currently operate a public developer portal or expose
-  customer-facing APIs; agency, claims, and policyholder access is delivered
-  through web portals (cinfin.com, onlineservice.cinfin.com, and the Cincinnati
-  Insurance Mobile App), with technical integrations for appointed agencies
-  handled directly by Cincinnati Insurance IT support.
+  Cincinnati Financial Corporation (NASDAQ: CINF) is a property and casualty insurance
+  holding company in Fairfield, Ohio, whose subsidiaries — The Cincinnati Insurance
+  Company, The Cincinnati Indemnity Company, The Cincinnati Casualty Company, The
+  Cincinnati Specialty Underwriters Insurance Company and The Cincinnati Life Insurance
+  Company — market business, home, auto and life insurance plus fixed annuities
+  exclusively through independent insurance agencies. Cincinnati Insurance does run an API
+  program for integration partners: it publishes an API Terms and Conditions Agreement
+  licensing "the Cincinnati Insurance APIs" and charges no fee at present. But that
+  agreement is a legal instrument only — it names no protocol, endpoint or auth scheme,
+  and the per-API "API Policy" it incorporates by reference is never published. Access
+  starts with an acceptance form, after which Cincinnati contacts the applicant; there is
+  no developer portal, public reference or machine-readable contract.
 deliveryModel:
   model: unknown
   open_source: false
@@ -22,16 +25,21 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: unknown
-  onboarding: unknown
+  pricing: free
+  onboarding: request
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
+  label: >-
+    No fee at present, but access is granted only after a named individual at a named
+    organization accepts the API Terms and Conditions Agreement and Cincinnati responds.
+  confidence: medium
+  source:
+    - https://www.cinfin.com/legal/api-terms-conditions-acceptance
+    - >-
+      https://edge.sitecorecloud.io/cincinna-x33xq9h6/media/Project/Cincinnati-Financial/CinFin/Files/api-terms-conditions.pdf
+  generated: '2026-09-05'
+  method: searched
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cincinnati-financial.png
 url: >-
   https://raw.githubusercontent.com/api-evangelist/cincinnati-financial/refs/heads/main/apis.yml
@@ -61,7 +69,7 @@ tags_raw:
   - Property Casualty
   - Fortune 1000
 created: '2025-02-21'
-modified: '2026-04-23'
+modified: '2026-09-05'
 specificationVersion: '0.23'
 apis: []
 common:
@@ -89,6 +97,60 @@ common:
     url: https://www.cinfin.com/legal-footer/accessibility
   - type: Contact
     url: https://www.cinfin.com/contact-us
+  - type: WellKnown
+    url: well-known/cincinnati-financial-well-known.yml
+  - type: SecurityTxt
+    url: well-known/cincinnati-financial-security.txt
+  - type: Security
+    url: security/cincinnati-financial-vulnerability-disclosure.yml
+  - type: Plans
+    url: plans/cincinnati-financial-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/cincinnati-financial-rate-limits.yml
+  - type: Conformance
+    url: conformance/cincinnati-financial-conformance.yml
+  - type: Packages
+    url: packages/cincinnati-financial-packages.yml
+  - type: LLMsTxt
+    url: llms/cincinnati-financial-llms.txt
+  - type: TermsOfService
+    url: https://www.cinfin.com/legal-footer/terms-conditions
+  - type: PrivacyPolicy
+    url: https://www.cinfin.com/legal-footer/privacy-policy
+  - type: Blog
+    url: https://blog.cinfin.com/
+  - type: SignUp
+    url: https://www.cinfin.com/legal/api-terms-conditions-acceptance
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+
+x-enrichment:
+  date: '2026-09-05'
+  status: minimal
+  artifacts_added: 7
+  pass: local-v3
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Cincinnati Insurance does run an API program — it publishes an API Terms and Conditions
+    Agreement licensing "the Cincinnati Insurance APIs" and charges no fee for them — but the
+    only public page in its 231-URL sitemap that touches the program is an acceptance form
+    that collects name, email, title and organization behind a reCAPTCHA and answers "We'll be
+    in contact with you shortly"; the per-API "API Policy" documentation the agreement
+    incorporates by reference nine times is never published, and no OpenAPI, reference, base
+    URL or auth scheme is reachable anonymously on any cinfin.com host.
+  evidence:
+    - url: https://www.cinfin.com/legal/api-terms-conditions-acceptance
+      status: 200
+    - url: >-
+        https://edge.sitecorecloud.io/cincinna-x33xq9h6/media/Project/Cincinnati-Financial/CinFin/Files/api-terms-conditions.pdf
+      status: 200
+    - url: https://cincilink.cinfin.com/
+      status: 302
+    - url: https://www.cinfin.com/llms.txt
+      status: 404
+    - url: https://api.cinfin.com/openapi.json
+      status: 0
+  checked: '2026-09-05'

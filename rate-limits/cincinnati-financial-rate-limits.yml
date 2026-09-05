@@ -1,0 +1,42 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://edge.sitecorecloud.io/cincinna-x33xq9h6/media/Project/Cincinnati-Financial/CinFin/Files/api-terms-conditions.pdf
+  (Cincinnati Insurance "API Terms and Conditions Agreement", section 7 "Use of APIs"),
+  linked from https://www.cinfin.com/legal/api-terms-conditions-acceptance
+limit_count: 0
+rate_limits: []
+response_headers: []
+note: >-
+  No numeric rate limit, window, burst allowance, exhaustion status code or RateLimit-*
+  response header is published anywhere on Cincinnati Insurance's public surface. The API
+  Terms and Conditions Agreement confirms limits EXIST without ever stating one: section 7
+  forbids a Provider to "Circumvent or attempt to circumvent any limits placed on Provider's
+  use of the APIs by Cincinnati Insurance", to "Use a disproportionate amount of bandwidth",
+  to "Request more data than your application needs for its intended functionality", and to
+  use the APIs in a way that "negatively affects the stability of the APIs or the manner in
+  which other apps using the APIs behave". A limit an integrator is contractually bound not
+  to exceed, and is never told the value of, is the finding here — it is legible only after
+  the agreement is executed and the per-API "API Policy" documentation the agreement
+  incorporates by reference is handed over. limit_count is an honest 0.
+contractual_limit_language:
+  - clause: 7(o)
+    text: >-
+      Circumvent or attempt to circumvent any limits placed on Provider's use of the APIs by
+      Cincinnati Insurance
+  - clause: 7(j)
+    text: Request more data than your application needs for its intended functionality
+  - clause: 7(t)
+    text: >-
+      Use the APIs in such a way that your usage negatively affects the stability of the APIs
+      or the manner in which other apps using the APIs behave
+  - clause: 7(u)
+    text: Use a disproportionate amount of bandwidth
+evidence:
+  - url: >-
+      https://edge.sitecorecloud.io/cincinna-x33xq9h6/media/Project/Cincinnati-Financial/CinFin/Files/api-terms-conditions.pdf
+    status: 200
+    kind: API Terms and Conditions Agreement (live probe)
+  - url: https://www.cinfin.com/legal/api-terms-conditions-acceptance
+    status: 200
+    kind: the only public page in the sitemap that mentions the API program
