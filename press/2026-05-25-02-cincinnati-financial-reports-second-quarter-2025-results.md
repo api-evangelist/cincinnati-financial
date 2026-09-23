@@ -1,7 +1,9 @@
 ---
 title: Cincinnati Financial Reports Second-Quarter 2025 Results
 url: https://investors.cinfin.com/2025-07-28-Cincinnati-Financial-Reports-Second-Quarter-2025-Results
-date: '2026-05-25'
+published: '2025-07-28'
+date_basis: url-derived
+harvested: '2026-05-25'
 query: '"Cincinnati Financial" press release artificial intelligence'
 position: 2
 source: serpapi-google

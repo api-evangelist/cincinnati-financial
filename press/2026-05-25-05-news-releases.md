@@ -1,7 +1,9 @@
 ---
 title: News Releases
 url: https://investors.cinfin.com/2026-01-30-Cincinnati-Financial-Corporation-Increases-Regular-Quarterly-Cash-Dividend
-date: '2026-05-25'
+published: '2026-01-30'
+date_basis: url-derived
+harvested: '2026-05-25'
 query: '"Cincinnati Financial" press release artificial intelligence'
 position: 5
 source: serpapi-google
