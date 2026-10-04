@@ -49,7 +49,7 @@ position: Consuming
 tags:
   - Auto Insurance
   - Business Insurance
-  - Financial-Services
+  - Financial Services
   - Home Insurance
   - Independent Agency
   - Insurance
@@ -68,6 +68,7 @@ tags_raw:
   - No Public API
   - Property Casualty
   - Fortune 1000
+  - Financial-Services
 created: '2025-02-21'
 modified: '2026-09-05'
 specificationVersion: '0.23'
