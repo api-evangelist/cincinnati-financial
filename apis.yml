@@ -30,6 +30,10 @@ accessModel:
   trial: false
   try_now: false
   public: false
+  gated: partner
+  gated_source:
+  - tag:No Public API
+  - description
   label: >-
     No fee at present, but access is granted only after a named individual at a named
     organization accepts the API Terms and Conditions Agreement and Cincinnati responds.
@@ -54,7 +58,6 @@ tags:
   - Independent Agency
   - Insurance
   - Life Insurance
-  - No Public API
   - Property Casualty
   - Fortune 1000
 tags_raw:
@@ -65,7 +68,6 @@ tags_raw:
   - Independent Agency
   - Insurance
   - Life Insurance
-  - No Public API
   - Property Casualty
   - Fortune 1000
   - Financial-Services
@@ -155,3 +157,5 @@ x-coverage:
     - url: https://api.cinfin.com/openapi.json
       status: 0
   checked: '2026-09-05'
+x-tags-removed:
+- No Public API
