@@ -1,4 +1,4 @@
-# Cincinnati Financial (cincinnati-financial)
+# Cincinnati Financial
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,44 +64,97 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cincinnati Financial Corporation (NASDAQ: CINF) is a property and casualty insurer headquartered in Fairfield, Ohio, that markets a full suite of business, home, auto, and life insurance products plus investment services exclusively through a network of independent insurance agencies. Cincinnati Financial does not currently operate a public developer portal or expose customer-facing APIs; agency, claims, and policyholder access is delivered through web portals and the Cincinnati Insurance Mobile App, with technical integrations for appointed agencies handled directly by Cincinnati Insurance IT support.
+Cincinnati Financial Corporation (NASDAQ: CINF) is a property and casualty insurance holding company in Fairfield, Ohio, whose subsidiaries — The Cincinnati Insurance Company, The Cincinnati Indemnity Company, The Cincinnati Casualty Company, The Cincinnati Specialty Underwriters Insurance Company and The Cincinnati Life Insurance Company — market business, home, auto and life insurance plus fixed annuities exclusively through independent insurance agencies. Cincinnati Insurance does run an API program for integration partners: it publishes an API Terms and Conditions Agreement licensing "the Cincinnati Insurance APIs" and charges no fee at present. But that agreement is a legal instrument only — it names no protocol, endpoint or auth scheme, and the per-API "API Policy" it incorporates by reference is never published. Access starts with an acceptance form, after which Cincinnati contacts the applicant; there is no developer portal, public reference or machine-readable contract.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/cincinnati-financial/refs/heads/main/apis.yml)
+**Areas:** Auto Insurance · Business Insurance · Financial Services · Home Insurance · Independent Agency · Insurance · Life Insurance · Property and Casualty · Fortune 1000
 
-## Scope
+## Cincinnati Financial on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** Private
+Everything profiled for Cincinnati Financial is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cincinnati-financial/](https://apis.io/providers/cincinnati-financial/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### Published properties
 
-- Auto Insurance, Business Insurance, Financial Services, Home Insurance, Independent Agency, Insurance, Life Insurance, No Public API, Property Casualty
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Timestamps
+#### Security (2)
 
-- **Created:** 2025-02-21
-- **Modified:** 2026-04-23
+Authentication, trust centre, and vulnerability disclosure.
 
-## APIs
+- [Cincinnati Financial Domain Security](https://apis.io/security/cincinnati-financial/cincinnati-financial-domain-security/)
+- [Cincinnati Financial Vulnerability Disclosure](https://apis.io/security/cincinnati-financial/cincinnati-financial-vulnerability-disclosure/)
 
-No public Cincinnati Financial APIs were identified. The company does not publish a developer portal, FHIR endpoint, or open API documentation. Appointed agencies access integration functionality through the Cincinnati Insurance agency portal, and Cincinnati Financial has not been identified as an in-scope payer under CMS interoperability rules. This index will be updated if Cincinnati Financial publishes API documentation or a developer program.
+#### Plans and pricing (1)
 
-## Common Properties
+Published plans, tiers and prices.
+
+- [Cincinnati Financial Plans Pricing](https://apis.io/plans/cincinnati-financial/cincinnati-financial-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cincinnati Financial Rate Limits](https://apis.io/rate-limits/cincinnati-financial/cincinnati-financial-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.cinfin.com/)
-- [About](https://www.cinfin.com/about-us)
-- [Agent Locator](https://www.cinfin.com/cincinnati-insurance-agents)
-- [Policyholder Portal](https://onlineservice.cinfin.com/b2c/Account_Self_Service/Login.aspx)
-- [Mobile App](https://www.cinfin.com/mobile)
-- [Claims](https://www.cinfin.com/contact-us/claims)
+- [Sign up](https://www.cinfin.com/legal/api-terms-conditions-acceptance)
 - [Support](https://www.cinfin.com/contact-us/online-services-support)
-- [FAQ](https://www.cinfin.com/contact-us/faq)
-- [Accessibility](https://www.cinfin.com/legal-footer/accessibility)
-- [Contact](https://www.cinfin.com/contact-us)
+- [Blog](https://blog.cinfin.com/)
+- [Terms of service](https://www.cinfin.com/legal-footer/terms-conditions)
+- [Privacy policy](https://www.cinfin.com/legal-footer/privacy-policy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 14.8** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 4.8 |
+| Access clarity | 34.2 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.9** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cincinnati-financial/](https://apis.io/providers/cincinnati-financial/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cincinnati Financial: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cincinnati-financial/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
